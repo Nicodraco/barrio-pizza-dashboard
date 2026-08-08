@@ -1,0 +1,7 @@
+services:
+  barrio-pizza:
+    build: .
+    container_name: barrio-pizza
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
