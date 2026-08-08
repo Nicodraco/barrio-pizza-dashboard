@@ -175,7 +175,6 @@ detalle del proyecto:
 | `Diseño.md` | Identidad visual: paleta, tipografía, layout y decisiones de diseño. |
 | `Agentes_y_skills.md` | Agentes y habilidades (skills) de IA usados en el desarrollo. |
 | `Todo_list.md` | Lista de trabajo completado y pendiente para la entrega. |
-
 ## Cómo se usó IA en este proyecto
 
 1. **Asistente de código**: la solución se desarrolló con ayuda de una IA
