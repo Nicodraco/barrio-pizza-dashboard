@@ -1,9 +1,25 @@
 # Dashboard de órdenes de compra · Barrio Pizza
 
-Herramienta construida para la **práctica de IA en Barrio Pizza**: revisa las
-órdenes de compra de la semana de cada sucursal y detecta automáticamente si
-están **pidiendo de más, de menos o se olvidaron de algo**, comparando contra el
-consumo proyectado y el inventario actual.
+Solución al **reto técnico de la práctica de IA de Barrio Pizza** (cadena de 10
+pizzerías en Panamá). Cada semana cada sucursal arma su orden de compra de
+insumos y hoy la gerente de compras las aprueba al ojo. Este dashboard revisa
+automáticamente las órdenes de la semana y detecta si están **pidiendo de más,
+de menos o se les olvidó algo**, comparando el consumo proyectado y el inventario
+actual, para ver las alertas al instante sin revisar producto por producto.
+
+## Los datos (4 archivos CSV)
+
+Están en la carpeta [`datos/`](datos). El consumo y el inventario están en
+**unidad base** (kg, L, und), pero las órdenes vienen en **formatos** ("3" = 3
+sacos); el pipeline convierte con `unidad_base_por_formato` de
+`ingredientes.csv`.
+
+| Archivo | Qué contiene |
+|---|---|
+| `ingredientes.csv` | Catálogo: proveedor, unidad, **formato de compra** (ej. "Saco 25 kg") y si es perecedero |
+| `consumo_historico.csv` | Cuánto consumió cada sucursal de cada ingrediente en las **últimas 6 semanas** |
+| `inventario_actual.csv` | Stock actual de cada ingrediente por sucursal |
+| `orden_compra_semana.csv` | Lo que cada sucursal **está pidiendo** esta semana, en formatos |
 
 ## Cómo correrlo con Docker (recomendado)
 
@@ -188,6 +204,29 @@ En la vida real las órdenes viven en Odoo (módulo Compras). La integración se
    - Enviar notificaciones por correo a la gerente de compras con las alertas.
    - Con un *server action* o *scheduled action*, sugerir el pedido corregido y
      crearlo como borrador (`purchase.order`) listo para aprobar.
+
+## El reto (entrega y reglas)
+
+El reto pedía construir un dashboard que revise automáticamente las órdenes de
+compra: **proyectar** el consumo de la próxima semana por (sucursal, insumo),
+calcular la **necesidad real** (consumo proyectado − inventario actual), comparar
+con la **orden de la semana** y mostrar **alertas claras** en una pantalla visual
+para la gerente de compras.
+
+**Qué entregar (por el formulario):**
+
+1. Link a un repo de GitHub con el código + un README (cómo correrlo y supuestos).
+2. Video de 3–5 min mostrando el dashboard funcionando y el razonamiento.
+3. Link a la app en vivo publicada y funcionando.
+4. Explicación de cómo se usó la IA → sección siguiente.
+
+**Reglas del juego:** lenguaje y herramientas libres, incluidas gratuitas
+(Streamlit, Hugging Face Spaces, Vercel, GitHub, Loom, IA de código). Fecha
+límite del reto: domingo 9 de agosto, 11:59 p.m. Dudas en *martin@barriopizza.com*.
+
+**Cómo lo evalúan:** que funcione y detecte bien los problemas · manejo de
+unidades y datos incompletos · qué tan bien se usó la IA · el razonamiento · la
+claridad de la explicación.
 
 ## Estructura
 
