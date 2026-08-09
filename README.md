@@ -7,6 +7,16 @@ automáticamente las órdenes de la semana y detecta si están **pidiendo de má
 de menos o se les olvidó algo**, comparando el consumo proyectado y el inventario
 actual, para ver las alertas al instante sin revisar producto por producto.
 
+## Enlaces
+
+| Qué | Link |
+|---|---|
+| App en vivo (Streamlit Cloud) | https://barrio-pizza-dashboard-e6bwz2zvd2rqkcjvjidapp4.streamlit.app |
+| Repo de GitHub | https://github.com/Nicodraco/barrio-pizza-dashboard |
+
+La app publicada se despliega automáticamente desde este repo (`app.py` +
+`requirements.txt`), así que no hay que hacer nada extra tras cada `git push`.
+
 ## Los datos (4 archivos CSV)
 
 Están en la carpeta [`datos/`](datos). El consumo y el inventario están en
@@ -175,6 +185,7 @@ detalle del proyecto:
 | `Diseño.md` | Identidad visual: paleta, tipografía, layout y decisiones de diseño. |
 | `Agentes_y_skills.md` | Agentes y habilidades (skills) de IA usados en el desarrollo. |
 | `Todo_list.md` | Lista de trabajo completado y pendiente para la entrega. |
+
 ## Cómo se usó IA en este proyecto
 
 1. **Asistente de código**: la solución se desarrolló con ayuda de una IA
